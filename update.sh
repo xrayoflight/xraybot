@@ -104,12 +104,12 @@ do
 			sudo apt-get install -y php-ssh2
 			sudo apt-get install -y libssh2-1-dev libssh2-1
 
-			destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
+			destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
 
 			if [ -z "$destination_dir" ]; then
 			    RANDOM_NUMBER=$(( RANDOM % 10000000 + 1000000 ))
-			    mkdir "/var/www/html/wizpanel${RANDOM_NUMBER}"
-			    echo "Directory created: wizpanel${RANDOM_NUMBER}"
+			    mkdir "/var/www/html/xpanel${RANDOM_NUMBER}"
+			    echo "Directory created: xpanel${RANDOM_NUMBER}"
 			    echo "Folder created successfully!"
 			    sudo mkdir /root/updatewizwiz
    			    sleep 1
@@ -124,7 +124,7 @@ do
 			
 			
 
-			 destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
+			 destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
 
 			 cd /var/www/html/
 			 wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
@@ -166,7 +166,7 @@ do
 			
 # 			echo -e '\e[31m'
 
-# 			find /var/www/html -type d -name "*wizpanel*" -print | sed "s|/var/www/html|& \n\n\nPanel: https://yourdomain.com|g"
+# 			find /var/www/html -type d -name "*xpanel*" -print | sed "s|/var/www/html|& \n\n\nPanel: https://yourdomain.com|g"
 			
 # 			echo -e '\033[0m'
 
@@ -191,8 +191,8 @@ do
 # 			PATHS=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
 # 			(crontab -l | grep -v "backupnutif.php") | crontab -
 			
-# 			(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-# 			(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+# 			(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+# 			(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 # 			fi
 			
 			clear
@@ -203,11 +203,11 @@ do
 # 			PATHS2=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
 # 			PATHS3=$(cat /root/updatewizwiz/wizup.txt | grep '$path' | cut -d"'" -f2)
 # 			if [ -d "/root/confwizwiz/dbrootwizwiz.txt" ]; then
-#                             echo -e "\e[92mPanel: \e[31mhttps://${DOMAIN_NAME}/wizpanel${PATHS}\033[0m\n"
-# 			    (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+#                             echo -e "\e[92mPanel: \e[31mhttps://${DOMAIN_NAME}/xpanel${PATHS}\033[0m\n"
+# 			    (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 # 			else
-# 			    echo -e "\e[92mPanel: \e[31mhttps://${DOMAIN_NAME}/wizpanel${PATHS3}\033[0m\n"
-# 			    (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizpanel${PATHS3}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+# 			    echo -e "\e[92mPanel: \e[31mhttps://${DOMAIN_NAME}/xpanel${PATHS3}\033[0m\n"
+# 			    (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xpanel${PATHS3}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 # 			fi
 			
 			
@@ -253,7 +253,7 @@ do
 			
 			mysql -u $userrr -p$passs -e "DROP DATABASE xraybot;" -e "DROP USER '$userrrname'@'localhost';" -e "DROP USER '$userrrname'@'%';"
 
-			sudo rm -r /var/www/html/wizpanel${pathsss}
+			sudo rm -r /var/www/html/xpanel${pathsss}
 			sudo rm -r /var/www/html/xraybot
 			
 			clear

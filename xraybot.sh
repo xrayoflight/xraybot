@@ -107,7 +107,7 @@ echo -e "\n\033[33mXraybot config and script have been installed successfully\03
 wait
     
     
-destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
+destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
     
 if [ -z "$destination_dir" ]; then
     RANDOM_NUMBER=$(( RANDOM % 10000000 + 1000000 ))
@@ -197,7 +197,7 @@ PATHS=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
 (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xraybot/settings/warnusers.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xraybot/settings/gift2all.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 (crontab -l ; echo "*/3 * * * * curl https://${DOMAIN_NAME}/xraybot/settings/tronChecker.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 
 echo -e "\n\e[92m Setting Up Cron...\033[0m\n"
 
@@ -348,7 +348,7 @@ wait
         echo -e "\e[33mDatabase password: \e[36m${dbpass}\033[0m"
         echo " "
         echo -e "\e[100mwizwiz panel:\033[0m"
-        echo -e "\e[33maddres: \e[36mhttps://${YOUR_DOMAIN}/wizpanel${RANDOM_NUMBER}\033[0m"
+        echo -e "\e[33maddres: \e[36mhttps://${YOUR_DOMAIN}/xpanel${RANDOM_NUMBER}\033[0m"
         echo -e "\e[33musername panel: \e[36madmin\033[0m"
         echo -e "\e[33mpassword panel: \e[36madmin\033[0m\n"
         
