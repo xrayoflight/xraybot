@@ -3,11 +3,11 @@
 <h1 align="center"/>Welcome</h1>
 
 <p align="center">
-Easy to sell with <a href="https://github.com/wizwizdev/wizwizxui-timebot">wizwizxui-timebot</a> easy install with few clicks
+Easy to sell with <a href="https://github.com/xrayoflight/xraybot">xraybot</a> easy install with few clicks
 </p>
 
 <p align="center">
-wizwiz is a powerful and professional telegram-bot that supports several types of panels and is the best option for sale, supports most protocols and has easy installation. This bot was translated for customers from Russia. It is a great alternative to selling so that you can get to work.
+xraybot is a powerful and professional telegram-bot that supports several types of panels and is the best option for sale, supports most protocols and has easy installation. This bot was translated for customers from Russia. It is a great alternative to selling so that you can get to work.
 </p>
 
 
@@ -28,7 +28,7 @@ wizwiz is a powerful and professional telegram-bot that supports several types o
 - The first option asks you for a domain, you must set the ip server for the domain and then enter it according to the example
 > Enter the installation command in the console and enter the required items to complete the installation.
 ```
-bash <(curl -s https://raw.githubusercontent.com/EugenePletnev/wizwizxui-bot/main/wizwiz.sh)
+bash <(curl -s https://raw.githubusercontent.com/xrayoflight/xraybot/main/xraybot.sh)
 ```
 - First enter "sub.domain.com" or "domain.com" without https
 - Enter email
@@ -48,7 +48,7 @@ bash <(curl -s https://raw.githubusercontent.com/EugenePletnev/wizwizxui-bot/mai
 
 - With every update and backup, a notification is sent to the manager robot
 ```
-bash <(curl -s https://raw.githubusercontent.com/EugenePletnev/wizwizxui-bot/main/update.sh)
+bash <(curl -s https://raw.githubusercontent.com/xrayoflight/xraybot/main/update.sh)
 ```
 
 <br>
@@ -101,7 +101,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 # Features
 
-- nowpayments - zarinpal - nextpay portal and rial currency
 - Support for - xtls - tls - reality - Grpc - ws - tcp
 - vless - vmess - trojan support
 - The possibility of extending the service
@@ -164,12 +163,8 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 Be sure to join the group and channel and support us
 
 ## Contact Developer
-💎 Group: https://t.me/wizwizdev
-💎 Channel: https://t.me/wizwizch
+💎 Group: https://t.me/v2rayvpn_g
+💎 Channel: https://t.me/dev2ray_ch
 
 <br>
 <br>
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/wizwizdev/wizwizxui-timebot.svg)](https://starchart.cc/wizwizdev/wizwizxui-timebot)
