@@ -33,6 +33,7 @@ PKG=(
     php-gd 
     php-json 
     php-curl 
+    python3-requests
 #     phpmyadmin
 )
 
