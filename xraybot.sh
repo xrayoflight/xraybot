@@ -106,7 +106,7 @@ wait
 git clone https://github.com/xrayoflight/xraybot.git /var/www/html/xraybot
 sudo chown -R www-data:www-data /var/www/html/xraybot/
 sudo chmod -R 755 /var/www/html/xraybot/
-echo -e "\n\033[33mWizWiz config and script have been installed successfully\033[0m"
+echo -e "\n\033[33mXraybot config and script have been installed successfully\033[0m"
 
 wait
     
@@ -213,6 +213,9 @@ sudo ufw allow 443
 # Let's Encrypt
 echo -e "\n\033[1;7;32mInstalling Let's Encrypt...\033[0m\n"
 sudo apt install letsencrypt -y
+ 
+
+sudo systemctl stop apache2
 
 # automatic certificate renewal
 echo -e "\n\033[1;7;33mEnabling automatic certificate renewal...\033[0m\n"
@@ -237,6 +240,7 @@ sudo certbot --apache --agree-tos --preferred-challenges http -d $DOMAIN_NAME
 echo -e "\e[32m======================================"
 echo -e "SSL certificate obtained successfully!"
 echo -e "======================================\033[0m"
+sudo systemctl start apache2
 
 
 wait
