@@ -95,36 +95,35 @@ sudo systemctl restart apache2.service
 
 wait
 
-git clone https://github.com/xrayoflight/xraybot.git /var/www/html/xrayoflight
-sudo chown -R www-data:www-data /var/www/html/xrayoflight/
-sudo chmod -R 755 /var/www/html/xrayoflight/
+git clone https://github.com/xrayoflight/xraybot.git /var/www/html/xraybot
+sudo chown -R www-data:www-data /var/www/html/xraybot/
+sudo chmod -R 755 /var/www/html/xraybot/
 echo -e "\n\033[33mWizWiz config and script have been installed successfully\033[0m"
 
 wait
     
     
-destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
+destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
     
 if [ -z "$destination_dir" ]; then
     RANDOM_NUMBER=$(( RANDOM % 10000000 + 1000000 ))
-    mkdir "/var/www/html/wizpanel${RANDOM_NUMBER}"
-    echo "Directory created: wizpanel${RANDOM_NUMBER}"
+    mkdir "/var/www/html/xraybot${RANDOM_NUMBER}"
+    echo "Directory created: xraybot${RANDOM_NUMBER}"
     echo "Folder created successfully!"
 else
     echo "Folder already exists."
 fi
    
- destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
+ destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
 
  cd /var/www/html/
-# wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/9.1.1/wizwizpanel.zip
  wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
 
  file_to_transfer="/var/www/html/wizwizpanel.zip"
- destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
+ destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
 
  if [ -z "$destination_dir" ]; then
-   echo "Error: Could not find directory containing 'wiz' in '/var/www/html'"
+   echo "Error: Could not find directory containing 'xray' in '/var/www/html'"
    exit 1
  fi
 
@@ -190,11 +189,11 @@ DOMAIN_NAME="$domainname"
 
 # update cron
 PATHS=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/messagewizwiz.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/rewardReport.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/warnusers.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/gift2all.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "*/3 * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/tronChecker.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xraybot/settings/messagewizwiz.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xraybot/settings/rewardReport.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xraybot/settings/warnusers.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xraybot/settings/gift2all.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "*/3 * * * * curl https://${DOMAIN_NAME}/xraybot/settings/tronChecker.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 
 echo -e "\n\e[92m Setting Up Cron...\033[0m\n"
@@ -295,7 +294,7 @@ wait
 
         sleep 1
         
-        file_path="/var/www/html/xrayoflight/baseInfo.php"
+        file_path="/var/www/html/xraybot/baseInfo.php"
         
         if [ -f "$file_path" ]; then
           rm "$file_path"
@@ -307,33 +306,33 @@ wait
         sleep 2
         
         # print file
-        echo -e "<?php" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "error_reporting(0);" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "${ASAS}botToken = '${YOUR_BOT_TOKEN}';" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "${ASAS}dbUserName = '${dbuser}';" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "${ASAS}dbPassword = '${dbpass}';" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "${ASAS}dbName = '${dbname}';" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "${ASAS}botUrl = 'https://${YOUR_DOMAIN}/xrayoflight/';" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "${ASAS}admin = ${YOUR_CHAT_ID};" >> /var/www/html/xrayoflight/baseInfo.php
-        echo -e "?>" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "<?php" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "error_reporting(0);" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "${ASAS}botToken = '${YOUR_BOT_TOKEN}';" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "${ASAS}dbUserName = '${dbuser}';" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "${ASAS}dbPassword = '${dbpass}';" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "${ASAS}dbName = '${dbname}';" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "${ASAS}botUrl = 'https://${YOUR_DOMAIN}/xraybot/';" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "${ASAS}admin = ${YOUR_CHAT_ID};" >> /var/www/html/xraybot/baseInfo.php
+        echo -e "?>" >> /var/www/html/xraybot/baseInfo.php
 
         sleep 1
 
-        curl -F "url=https://${YOUR_DOMAIN}/xrayoflight/bot.php" "https://api.telegram.org/bot${YOUR_BOT_TOKEN}/setWebhook"
+        curl -F "url=https://${YOUR_DOMAIN}/xraybot/bot.php" "https://api.telegram.org/bot${YOUR_BOT_TOKEN}/setWebhook"
         MESSAGE="✅ The v2ray bot has been successfully installed! @dev2ray_ch"
         curl -s -X POST "https://api.telegram.org/bot${YOUR_BOT_TOKEN}/sendMessage" -d chat_id="${YOUR_CHAT_ID}" -d text="$MESSAGE"
         
         
         sleep 1
         
-        url="https://${YOUR_DOMAIN}/xrayoflight/createDB.php"
+        url="https://${YOUR_DOMAIN}/xraybot/createDB.php"
         curl $url
         
         sleep 1
         
-        sudo rm -r /var/www/html/xrayoflight/webpanel
-	    sudo rm -r /var/www/html/xrayoflight/install
-	    sudo rm /var/www/html/xrayoflight/createDB.php
+        sudo rm -r /var/www/html/xraybot/webpanel
+	    sudo rm -r /var/www/html/xraybot/install
+	    sudo rm /var/www/html/xraybot/createDB.php
             
         clear
         

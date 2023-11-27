@@ -21,23 +21,23 @@ do
 			read -p "Are you sure you want to update Telegram-bot?[y/n]: " answer
 			echo " "
 			if [ "$answer" != "${answer#[Yy]}" ]; then
-			mv /var/www/html/xrayoflight/baseInfo.php /root/
-      			# mv /var/www/html/xrayoflight/settings/values.php /root/
+			mv /var/www/html/xraybot/baseInfo.php /root/
+      			# mv /var/www/html/xraybot/settings/values.php /root/
 			sudo apt-get install -y git
 			sudo apt-get install -y wget
 			sudo apt-get install -y unzip
 			sudo apt install curl -y
 			echo -e "\n\e[92mUpdating ...\033[0m\n"
 			sleep 4
-			rm -r /var/www/html/xrayoflight/
+			rm -r /var/www/html/xraybot/
 			echo -e "\n\e[92mWait a few seconds ...\033[0m\n"
 			sleep 3
-			git clone https://github.com/xrayoflight/xraybot.git /var/www/html/xrayoflight
-			sudo chown -R www-data:www-data /var/www/html/xrayoflight/
-			sudo chmod -R 755 /var/www/html/xrayoflight/
+			git clone https://github.com/xrayoflight/xraybot.git /var/www/html/xraybot
+			sudo chown -R www-data:www-data /var/www/html/xraybot/
+			sudo chmod -R 755 /var/www/html/xraybot/
 			sleep 3
-			mv /root/baseInfo.php /var/www/html/xrayoflight/
-      			# mv /root/values.php /var/www/html/xrayoflight/settings/
+			mv /root/baseInfo.php /var/www/html/xraybot/
+      			# mv /root/values.php /var/www/html/xraybot/settings/
 # 			if [ $? -ne 0 ]; then
 # 			echo -e "\n\e[41mError: The update failed!\033[0m\n"
 # 			exit 1
@@ -45,14 +45,14 @@ do
 			
 			sleep 1
 
-   			db_namewizwiz=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbName' | cut -d"'" -f2)
-		      	db_userwizwiz=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
-		      	db_passwizwiz=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
-			bot_token=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
-			bot_token2=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
-			bot_url=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botUrl' | cut -d'"' -d"'" -f2)
+   			db_namewizwiz=$(cat /var/www/html/xraybot/baseInfo.php | grep '$dbName' | cut -d"'" -f2)
+		      	db_userwizwiz=$(cat /var/www/html/xraybot/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
+		      	db_passwizwiz=$(cat /var/www/html/xraybot/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
+			bot_token=$(cat /var/www/html/xraybot/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
+			bot_token2=$(cat /var/www/html/xraybot/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
+			bot_url=$(cat /var/www/html/xraybot/baseInfo.php | grep '$botUrl' | cut -d'"' -d"'" -f2)
 			
-			filepath="/var/www/html/xrayoflight/baseInfo.php"
+			filepath="/var/www/html/xraybot/baseInfo.php"
 			
 			bot_value=$(cat $filepath | grep '$admin =' | sed 's/.*= //' | sed 's/;//')
 			
@@ -79,10 +79,10 @@ do
      
 			sleep 1
    
-			sudo rm -r /var/www/html/xrayoflight/webpanel
-			sudo rm -r /var/www/html/xrayoflight/install
-			rm /var/www/html/xrayoflight/createDB.php
-			rm /var/www/html/xrayoflight/updateShareConfig.php
+			sudo rm -r /var/www/html/xraybot/webpanel
+			sudo rm -r /var/www/html/xraybot/install
+			rm /var/www/html/xraybot/createDB.php
+			rm /var/www/html/xraybot/updateShareConfig.php
 			clear
 			
 			echo -e "\n\e[92mThe script was successfully updated! \033[0m\n"
@@ -145,10 +145,10 @@ do
 
 			echo -e "\n\e[92mUpdating ...\033[0m\n"
 			
-			bot_token=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
-			bot_token2=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
+			bot_token=$(cat /var/www/html/xraybot/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
+			bot_token2=$(cat /var/www/html/xraybot/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
 			
-			filepath="/var/www/html/xrayoflight/baseInfo.php"
+			filepath="/var/www/html/xraybot/baseInfo.php"
 			
 			bot_value=$(cat $filepath | grep '$admin =' | sed 's/.*= //' | sed 's/;//')
 			
@@ -248,13 +248,13 @@ do
    			userrr=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$user' | cut -d"'" -f2)
 			pathsss=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
 			pathsss=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
-			passsword=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
-   			userrrname=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
+			passsword=$(cat /var/www/html/xraybot/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
+   			userrrname=$(cat /var/www/html/xraybot/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
 			
 			mysql -u $userrr -p$passs -e "DROP DATABASE xraybot;" -e "DROP USER '$userrrname'@'localhost';" -e "DROP USER '$userrrname'@'%';"
 
 			sudo rm -r /var/www/html/wizpanel${pathsss}
-			sudo rm -r /var/www/html/xrayoflight
+			sudo rm -r /var/www/html/xraybot
 			
 			clear
 			
