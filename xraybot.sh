@@ -4,7 +4,7 @@ set -x  # Включить вывод команд в режиме отладк�
 
 
 
-# Written By: xraybot
+# Written By: xrayoflight
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e "\033[33mPlease run as root\033[0m"
@@ -36,7 +36,6 @@ PKG=(
     php-gd 
     php-json 
     php-curl 
-    python3-requests
 #     phpmyadmin
 )
 
@@ -115,23 +114,23 @@ destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
     
 if [ -z "$destination_dir" ]; then
     RANDOM_NUMBER=$(( RANDOM % 10000000 + 1000000 ))
-    mkdir "/var/www/html/xraybot${RANDOM_NUMBER}"
-    echo "Directory created: xraybot${RANDOM_NUMBER}"
+    mkdir "/var/www/html/xpanel${RANDOM_NUMBER}"
+    echo "Directory created: xpanel${RANDOM_NUMBER}"
     echo "Folder created successfully!"
 else
     echo "Folder already exists."
 fi
    
- destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
+ destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
 
  cd /var/www/html/
  wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
 
  file_to_transfer="/var/www/html/wizwizpanel.zip"
- destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
+ destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
 
  if [ -z "$destination_dir" ]; then
-   echo "Error: Could not find directory containing 'xray' in '/var/www/html'"
+   echo "Error: Could not find directory containing 'xpanel' in '/var/www/html'"
    exit 1
  fi
 
