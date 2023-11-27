@@ -22,9 +22,6 @@ sleep 5
 
 sudo apt update && apt upgrade -y
 echo -e "\e[92mThe server was successfully updated ...\033[0m\n"
-echo -e "\e[92mInstalling requests...\033[0m\n"
-sudo apt-get install python3-requests -y
-sudo /usr/bin/python3 -m pip install requests
 
 
 PKG=(
