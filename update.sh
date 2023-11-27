@@ -127,7 +127,7 @@ do
 			 destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
 
 			 cd /var/www/html/
-			 wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/9.1.1/wizwizpanel.zip
+			 wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
 
 			 file_to_transfer="/var/www/html/wizwizpanel.zip"
 			 destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
