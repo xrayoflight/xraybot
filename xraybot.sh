@@ -22,7 +22,8 @@ sleep 5
 
 sudo apt update && apt upgrade -y
 echo -e "\e[92mThe server was successfully updated ...\033[0m\n"
-
+echo -e "\e[92mInstalling requests...\033[0m\n"
+sudo apt-get install python3-requests -y
 
 PKG=(
     mysql-server	
@@ -170,7 +171,7 @@ else
     echo "Folder already exists."
 fi
 
-clear
+sleep 5
 
 echo " "
 echo -e "\e[32m
