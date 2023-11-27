@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # Written By: xraybot
 
@@ -185,7 +186,6 @@ echo -e "\n\033[0m Good Luck Baby\n"
 else
 # variables
 DOMAIN_NAME="$domainname"
-# WILDCARD_DOMAIN="*.$wildcarddomain"
 
 # update cron
 PATHS=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
