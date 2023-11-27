@@ -1,5 +1,17 @@
 #!/bin/bash
-set -x
+set -e  # Выходить из скрипта при возникновении ошибок
+set -x  # Включить вывод команд в режиме отладки
+
+IFS=$'\n'  # Настроить разделитель строк для цикла на перевод строки
+
+for line in $(cat your_script.sh); do
+    read -p "Press Enter to execute: $line"
+    eval "$line"
+done
+
+echo -e "\n\e[92m Setting Up Cron...\033[0m\n"
+
+set +x  # Отключить режим отладки после выполнения скрипта
 
 # Written By: xraybot
 
