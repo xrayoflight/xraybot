@@ -14,7 +14,7 @@ fi
 wait
 
 
-echo -e "    \e[31mTelegram Channel: \e[34m@dev2ray_ch\033[0m | \e[31mTelegram Group: \e[34m@dev2ray_group\033[0m\n"
+echo -e "    \e[31mTelegram Channel: \e[34m@dev2ray_ch\033[0m | \e[31mTelegram Group: \e[34m@v2rayvpn_g\033[0m\n"
 
 #sleep
 echo -e "\e[32mInstalling xraybot script ... \033[0m\n"
@@ -215,8 +215,6 @@ echo -e "\n\033[1;7;32mInstalling Let's Encrypt...\033[0m\n"
 sudo apt install letsencrypt -y
  
 
-sudo systemctl stop apache2
-
 # automatic certificate renewal
 echo -e "\n\033[1;7;33mEnabling automatic certificate renewal...\033[0m\n"
 sudo systemctl enable certbot.timer
@@ -240,7 +238,6 @@ sudo certbot --apache --agree-tos --preferred-challenges http -d $DOMAIN_NAME
 echo -e "\e[32m======================================"
 echo -e "SSL certificate obtained successfully!"
 echo -e "======================================\033[0m"
-sudo systemctl start apache2
 
 
 wait

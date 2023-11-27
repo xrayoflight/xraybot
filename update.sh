@@ -130,7 +130,7 @@ do
 			 wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
 
 			 file_to_transfer="/var/www/html/wizwizpanel.zip"
-			 destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
+			 destination_dir=$(find /var/www/html -type d -name "*xraybot*" | head -n 1)
 
 			 if [ -z "$destination_dir" ]; then
 			   echo "Error: Could not find directory containing 'wiz' in '/var/www/html'"
