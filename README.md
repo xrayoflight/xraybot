@@ -1,43 +1,16 @@
-<p align="center">
-  <a href="https://github.com/wizwizdev/wizwizxui-timebot" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/27927279/227711552-d2bc1089-5666-477b-9be7-d7e50a5286dc.png">
-      <img width="200" height="200" src="https://user-images.githubusercontent.com/27927279/227711552-d2bc1089-5666-477b-9be7-d7e50a5286dc.png">
-    </picture>
-  </a>
-</p> 
 
-<p align="center">
-	<a href="./README.md">
-	English
-	</a>
-	/
-	<a href="./README-fa.md">
-	فارسی
-	</a>
 
-</p>
-
-<h1 align="center"/>Welcome to wizwiz</h1>
+<h1 align="center"/>Welcome</h1>
 
 <p align="center">
 Easy to sell with <a href="https://github.com/wizwizdev/wizwizxui-timebot">wizwizxui-timebot</a> easy install with few clicks
 </p>
 
 <p align="center">
-wizwiz is a powerful and professional robot that supports several types of panels and is the best option for sale, supports most protocols and has easy installation. This robot is optimized for the dear people of Iran. It is a great alternative to selling so that you can get to work.
+wizwiz is a powerful and professional telegram-bot that supports several types of panels and is the best option for sale, supports most protocols and has easy installation. This bot was translated for customers from Russia. It is a great alternative to selling so that you can get to work.
 </p>
 
 
-<div align=center>
-
-[![Telegram Channel](https://img.shields.io/endpoint?label=Channel&style=flat-square&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fwizwizch&color=blue)](https://telegram.dog/wizwizch)
-[![Telegram Group](https://img.shields.io/endpoint?color=neon&label=Support%20Group&style=flat-square&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fwizwizdev)](https://telegram.dog/wizwizdev)
-<img src="https://img.shields.io/github/license/wizwizdev/wizwizxui-timebot?style=flat-square" />
-<img src="https://img.shields.io/github/v/release/wizwizdev/wizwizxui-timebot.svg" />
-<!-- <img src="https://visitor-badge.glitch.me/badge?page_id=wizwizdev.wizwizdev" />
- -->
-</div>
 
 <br>
 <br>
@@ -116,10 +89,11 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 # Donation
 
-- Saderat Bank: `6037691526973185`
-- Tron (TRX): `TY8j7of18gbMtneB8bbL7SZk5gcntQEemG`
-- Bitcoin: `bc1qcnkjnqvs7kyxvlfrns8t4ely7x85dhvz5gqge4`
-- Dogecoin: `DMyGMghEh4W55P3VeVHntCN3vYAFtshvVH`
+
+- Tron (TRX): `TCNSVUGaMwqVCtHNVKDDczYWQDDKNynPJg`
+- Bitcoin: `15cQCVpsgS3H1nfnm1F63BeKa5Uzq8gFWW`
+- USDT TRC20: `TPYCkwkRXZPcRP12ZJKWYW5u2EmZKUYQ3M`
+- TON : `UQCcheKiWE1NNDCWwQAR34RzOMUtMZbDS7zeBiZWnnFaojtz`
 
 <br>
 <hr>
