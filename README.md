@@ -15,7 +15,7 @@ xraybot is a powerful and professional telegram-bot that supports several types 
 <br>
 <br>
     <a align="center">
-        <img src="https://github.com/wizwizdev/wizwizxui-timebot/assets/27927279/f6635ea5-ab26-4c64-a7b8-952203f79763" />
+        <img src="https://github.com/xrayoflight/xraybot/assets/27927279/f6635ea5-ab26-4c64-a7b8-952203f79763" />
     </a>     
 <br>
 <br>
@@ -39,12 +39,12 @@ bash <(curl -s https://raw.githubusercontent.com/xrayoflight/xraybot/main/xraybo
 - Enter token
 - Enter Numerical ID of admin from @userinfobot
 - Re-enter "sub.domain.com" or "domain.com" without https
-- Very good, the installation message ( ✅ The wizwiz bot has been successfully installed! ) is sent to the bot
+- Very good, the installation message ( ✅ The xraybot bot has been successfully installed! ) is sent to the bot
 
 <br>
 <br>
 
-## Update bot - Update panel - backup - remove wizwiz
+## Update bot - Update panel - backup - remove xraybot
 
 - With every update and backup, a notification is sent to the manager robot
 ```

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Written By: wizwiz
+# Written By: xraybot
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e "\033[33mPlease run as root\033[0m"
@@ -21,23 +21,23 @@ do
 			read -p "Are you sure you want to update Telegram-bot?[y/n]: " answer
 			echo " "
 			if [ "$answer" != "${answer#[Yy]}" ]; then
-			mv /var/www/html/wizwizxui-timebot/baseInfo.php /root/
-      			# mv /var/www/html/wizwizxui-timebot/settings/values.php /root/
+			mv /var/www/html/xrayoflight/baseInfo.php /root/
+      			# mv /var/www/html/xrayoflight/settings/values.php /root/
 			sudo apt-get install -y git
 			sudo apt-get install -y wget
 			sudo apt-get install -y unzip
 			sudo apt install curl -y
 			echo -e "\n\e[92mUpdating ...\033[0m\n"
 			sleep 4
-			rm -r /var/www/html/wizwizxui-timebot/
+			rm -r /var/www/html/xrayoflight/
 			echo -e "\n\e[92mWait a few seconds ...\033[0m\n"
 			sleep 3
-			git clone https://github.com/EugenePletnev/wizwizxui-bot.git /var/www/html/wizwizxui-timebot
-			sudo chown -R www-data:www-data /var/www/html/wizwizxui-timebot/
-			sudo chmod -R 755 /var/www/html/wizwizxui-timebot/
+			git clone https://github.com/xrayoflight/xraybot.git /var/www/html/xrayoflight
+			sudo chown -R www-data:www-data /var/www/html/xrayoflight/
+			sudo chmod -R 755 /var/www/html/xrayoflight/
 			sleep 3
-			mv /root/baseInfo.php /var/www/html/wizwizxui-timebot/
-      			# mv /root/values.php /var/www/html/wizwizxui-timebot/settings/
+			mv /root/baseInfo.php /var/www/html/xrayoflight/
+      			# mv /root/values.php /var/www/html/xrayoflight/settings/
 # 			if [ $? -ne 0 ]; then
 # 			echo -e "\n\e[41mError: The update failed!\033[0m\n"
 # 			exit 1
@@ -45,14 +45,14 @@ do
 			
 			sleep 1
 
-   			db_namewizwiz=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$dbName' | cut -d"'" -f2)
-		      	db_userwizwiz=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
-		      	db_passwizwiz=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
-			bot_token=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
-			bot_token2=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
-			bot_url=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$botUrl' | cut -d'"' -d"'" -f2)
+   			db_namewizwiz=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbName' | cut -d"'" -f2)
+		      	db_userwizwiz=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
+		      	db_passwizwiz=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
+			bot_token=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
+			bot_token2=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
+			bot_url=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botUrl' | cut -d'"' -d"'" -f2)
 			
-			filepath="/var/www/html/wizwizxui-timebot/baseInfo.php"
+			filepath="/var/www/html/xrayoflight/baseInfo.php"
 			
 			bot_value=$(cat $filepath | grep '$admin =' | sed 's/.*= //' | sed 's/;//')
 			
@@ -79,10 +79,10 @@ do
      
 			sleep 1
    
-			sudo rm -r /var/www/html/wizwizxui-timebot/webpanel
-			sudo rm -r /var/www/html/wizwizxui-timebot/install
-			rm /var/www/html/wizwizxui-timebot/createDB.php
-			rm /var/www/html/wizwizxui-timebot/updateShareConfig.php
+			sudo rm -r /var/www/html/xrayoflight/webpanel
+			sudo rm -r /var/www/html/xrayoflight/install
+			rm /var/www/html/xrayoflight/createDB.php
+			rm /var/www/html/xrayoflight/updateShareConfig.php
 			clear
 			
 			echo -e "\n\e[92mThe script was successfully updated! \033[0m\n"
@@ -127,7 +127,7 @@ do
 			 destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
 
 			 cd /var/www/html/
-			 wget -O wizwizpanel.zip https://github.com/wizwizdev/wizwizxui-timebot/releases/download/9.1.1/wizwizpanel.zip
+			 wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/9.1.1/wizwizpanel.zip
 
 			 file_to_transfer="/var/www/html/wizwizpanel.zip"
 			 destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
@@ -145,14 +145,14 @@ do
 
 			echo -e "\n\e[92mUpdating ...\033[0m\n"
 			
-			bot_token=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
-			bot_token2=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
+			bot_token=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d"'" -f2)
+			bot_token2=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$botToken' | cut -d'"' -f2)
 			
-			filepath="/var/www/html/wizwizxui-timebot/baseInfo.php"
+			filepath="/var/www/html/xrayoflight/baseInfo.php"
 			
 			bot_value=$(cat $filepath | grep '$admin =' | sed 's/.*= //' | sed 's/;//')
 			
-			MESSAGE="🕹 WizWiz panel has been successfully updated!"
+			MESSAGE="🕹 xraybot panel has been successfully updated!"
 
 			curl -s -X POST "https://api.telegram.org/bot${bot_token}/sendMessage" -d chat_id="${bot_value}" -d text="$MESSAGE"
 			curl -s -X POST "https://api.telegram.org/bot${bot_token2}/sendMessage" -d chat_id="${bot_value}" -d text="$MESSAGE"
@@ -248,13 +248,13 @@ do
    			userrr=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$user' | cut -d"'" -f2)
 			pathsss=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
 			pathsss=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
-			passsword=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
-   			userrrname=$(cat /var/www/html/wizwizxui-timebot/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
+			passsword=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbPassword' | cut -d"'" -f2)
+   			userrrname=$(cat /var/www/html/xrayoflight/baseInfo.php | grep '$dbUserName' | cut -d"'" -f2)
 			
-			mysql -u $userrr -p$passs -e "DROP DATABASE wizwiz;" -e "DROP USER '$userrrname'@'localhost';" -e "DROP USER '$userrrname'@'%';"
+			mysql -u $userrr -p$passs -e "DROP DATABASE xraybot;" -e "DROP USER '$userrrname'@'localhost';" -e "DROP USER '$userrrname'@'%';"
 
 			sudo rm -r /var/www/html/wizpanel${pathsss}
-			sudo rm -r /var/www/html/wizwizxui-timebot
+			sudo rm -r /var/www/html/xrayoflight
 			
 			clear
 			

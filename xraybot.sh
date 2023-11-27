@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Written By: wizwiz
+# Written By: xraybot
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e "\033[33mPlease run as root\033[0m"
@@ -9,17 +9,11 @@ fi
 
 wait
 
-echo -e "\e[32m
-██     ██ ██ ███████ ██     ██ ██ ███████     ██   ██ ██    ██ ██ 
-██     ██ ██    ███  ██     ██ ██    ███       ██ ██  ██    ██ ██ 
-██  █  ██ ██   ███   ██  █  ██ ██   ███         ███   ██    ██ ██ 
-██ ███ ██ ██  ███    ██ ███ ██ ██  ███         ██ ██  ██    ██ ██ 
- ███ ███  ██ ███████  ███ ███  ██ ███████     ██   ██  ██████  ██ 
-\033[0m"
+
 echo -e "    \e[31mTelegram Channel: \e[34m@dev2ray_ch\033[0m | \e[31mTelegram Group: \e[34m@dev2ray_group\033[0m\n"
 
 #sleep
-echo -e "\e[32mInstalling WizWiz script ... \033[0m\n"
+echo -e "\e[32mInstalling xraybot script ... \033[0m\n"
 sleep 5
 
 sudo apt update && apt upgrade -y
@@ -101,9 +95,9 @@ sudo systemctl restart apache2.service
 
 wait
 
-git clone https://github.com/wizwizdev/wizwizxui-timebot.git /var/www/html/wizwizxui-timebot
-sudo chown -R www-data:www-data /var/www/html/wizwizxui-timebot/
-sudo chmod -R 755 /var/www/html/wizwizxui-timebot/
+git clone https://github.com/xrayoflight/xraybot.git /var/www/html/xrayoflight
+sudo chown -R www-data:www-data /var/www/html/xrayoflight/
+sudo chmod -R 755 /var/www/html/xrayoflight/
 echo -e "\n\033[33mWizWiz config and script have been installed successfully\033[0m"
 
 wait
@@ -123,8 +117,8 @@ fi
  destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
 
  cd /var/www/html/
-# wget -O wizwizpanel.zip https://github.com/wizwizdev/wizwizxui-timebot/releases/download/9.1.1/wizwizpanel.zip
- wget -O wizwizpanel.zip https://github.com/EugenePletnev/wizwizxui-bot/releases/download/v2raybot/wizwizpanel.zip
+# wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/9.1.1/wizwizpanel.zip
+ wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
 
  file_to_transfer="/var/www/html/wizwizpanel.zip"
  destination_dir=$(find /var/www/html -type d -name "*wizpanel*" | head -n 1)
@@ -196,11 +190,11 @@ DOMAIN_NAME="$domainname"
 
 # update cron
 PATHS=$(cat /root/confwizwiz/dbrootwizwiz.txt | grep '$path' | cut -d"'" -f2)
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizwizxui-timebot/settings/messagewizwiz.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizwizxui-timebot/settings/rewardReport.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizwizxui-timebot/settings/warnusers.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizwizxui-timebot/settings/gift2all.php >/dev/null 2>&1") | sort - | uniq - | crontab -
-(crontab -l ; echo "*/3 * * * * curl https://${DOMAIN_NAME}/wizwizxui-timebot/settings/tronChecker.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/messagewizwiz.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/rewardReport.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/warnusers.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/gift2all.php >/dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "*/3 * * * * curl https://${DOMAIN_NAME}/xrayoflight/settings/tronChecker.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 (crontab -l ; echo "* * * * * curl https://${DOMAIN_NAME}/wizpanel${PATHS}/backupnutif.php >/dev/null 2>&1") | sort - | uniq - | crontab -
 
 echo -e "\n\e[92m Setting Up Cron...\033[0m\n"
@@ -256,11 +250,11 @@ wait
 
     randomdbdb=$(openssl rand -base64 10 | tr -dc 'a-zA-Z' | cut -c1-8)
 
-    if [[ $(mysql -u root -p$ROOT_PASSWORD -e "SHOW DATABASES LIKE 'wizwiz'") ]]; then
+    if [[ $(mysql -u root -p$ROOT_PASSWORD -e "SHOW DATABASES LIKE 'xraybot'") ]]; then
         clear
         echo -e "\n\e[91mYou have already created the database\033[0m\n"
     else
-        dbname=wizwiz
+        dbname=xraybot
         clear
         echo -e "\n\e[32mPlease enter the database username!\033[0m"
         printf "[+] Default user name is \e[91m${randomdbdb}\e[0m ( let it blank to use this user name ): "
@@ -301,7 +295,7 @@ wait
 
         sleep 1
         
-        file_path="/var/www/html/wizwizxui-timebot/baseInfo.php"
+        file_path="/var/www/html/xrayoflight/baseInfo.php"
         
         if [ -f "$file_path" ]; then
           rm "$file_path"
@@ -313,33 +307,33 @@ wait
         sleep 2
         
         # print file
-        echo -e "<?php" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "error_reporting(0);" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "${ASAS}botToken = '${YOUR_BOT_TOKEN}';" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "${ASAS}dbUserName = '${dbuser}';" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "${ASAS}dbPassword = '${dbpass}';" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "${ASAS}dbName = '${dbname}';" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "${ASAS}botUrl = 'https://${YOUR_DOMAIN}/wizwizxui-timebot/';" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "${ASAS}admin = ${YOUR_CHAT_ID};" >> /var/www/html/wizwizxui-timebot/baseInfo.php
-        echo -e "?>" >> /var/www/html/wizwizxui-timebot/baseInfo.php
+        echo -e "<?php" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "error_reporting(0);" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "${ASAS}botToken = '${YOUR_BOT_TOKEN}';" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "${ASAS}dbUserName = '${dbuser}';" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "${ASAS}dbPassword = '${dbpass}';" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "${ASAS}dbName = '${dbname}';" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "${ASAS}botUrl = 'https://${YOUR_DOMAIN}/xrayoflight/';" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "${ASAS}admin = ${YOUR_CHAT_ID};" >> /var/www/html/xrayoflight/baseInfo.php
+        echo -e "?>" >> /var/www/html/xrayoflight/baseInfo.php
 
         sleep 1
 
-        curl -F "url=https://${YOUR_DOMAIN}/wizwizxui-timebot/bot.php" "https://api.telegram.org/bot${YOUR_BOT_TOKEN}/setWebhook"
+        curl -F "url=https://${YOUR_DOMAIN}/xrayoflight/bot.php" "https://api.telegram.org/bot${YOUR_BOT_TOKEN}/setWebhook"
         MESSAGE="✅ The v2ray bot has been successfully installed! @dev2ray_ch"
         curl -s -X POST "https://api.telegram.org/bot${YOUR_BOT_TOKEN}/sendMessage" -d chat_id="${YOUR_CHAT_ID}" -d text="$MESSAGE"
         
         
         sleep 1
         
-        url="https://${YOUR_DOMAIN}/wizwizxui-timebot/createDB.php"
+        url="https://${YOUR_DOMAIN}/xrayoflight/createDB.php"
         curl $url
         
         sleep 1
         
-        sudo rm -r /var/www/html/wizwizxui-timebot/webpanel
-	    sudo rm -r /var/www/html/wizwizxui-timebot/install
-	    sudo rm /var/www/html/wizwizxui-timebot/createDB.php
+        sudo rm -r /var/www/html/xrayoflight/webpanel
+	    sudo rm -r /var/www/html/xrayoflight/install
+	    sudo rm /var/www/html/xrayoflight/createDB.php
             
         clear
         

@@ -269,7 +269,7 @@ function showForm($type){
                        expireTime: <span><?php echo $expiryTime;?></span>
                     </p>
                 </div>
-                <p style="font-size:10px">Made with 🖤 in <a target="_blank" href="https://github.com/EugenePletnev/wizwizxui-bot">Eugene</a></p>
+                <p style="font-size:10px">Made with 🖤 in <a target="_blank" href="https://github.com/xrayoflight/xraybot">xrayoflight</a></p>
             </form>
         </div>
 
@@ -285,7 +285,7 @@ function showForm($type){
                 <fieldset>
                 <button class="search" type="submit">Поиск</button>
                 </fieldset>
-                <p style="font-size:13px">Made with 🖤 in <a target="_blank" href="https://github.com/EugenePletnev/wizwizxui-bot">Eugene</a></p>
+                <p style="font-size:13px">Made with 🖤 in <a target="_blank" href="https://github.com/xrayoflight/xraybot">xrayoflight</a></p>
             </form>
         </div>
         <br>
