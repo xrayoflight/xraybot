@@ -24,7 +24,8 @@ sudo apt update && apt upgrade -y
 echo -e "\e[92mThe server was successfully updated ...\033[0m\n"
 
 
-PKG=(lamp-server^
+PKG=(
+ #   lamp-server^
     mysql-server	
     libapache2-mod-php  
     apache2 
