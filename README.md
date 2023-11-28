@@ -163,8 +163,8 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 Be sure to join the group and channel and support us
 
 ## Contact Developer
-💎 Group: https://t.me/v2rayvpn_g
-💎 Channel: https://t.me/dev2ray_ch
+💎 Group: https://t.me/
+💎 Channel: https://t.me/
 
 <br>
 <br>
