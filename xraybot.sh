@@ -14,7 +14,7 @@ fi
 wait
 
 
-echo -e "    \e[31mTelegram Channel: \e[34m@dev2ray_ch\033[0m | \e[31mTelegram Group: \e[34m@v2rayvpn_g\033[0m\n"
+echo -e "    \e[31mTelegram Channel: \e[34m@\033[0m | \e[31mTelegram Group: \e[34m@\033[0m\n"
 
 #sleep
 echo -e "\e[32mInstalling xraybot script ... \033[0m\n"
@@ -108,31 +108,22 @@ echo -e "\n\033[33mXraybot config and script have been installed successfully\03
 wait
     
     
-destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
-    
-if [ -z "$destination_dir" ]; then
-    RANDOM_NUMBER=$(( RANDOM % 10000000 + 1000000 ))
-    mkdir "/var/www/html/xpanel${RANDOM_NUMBER}"
-    echo "Directory created: xpanel${RANDOM_NUMBER}"
+destination_dir="/var/www/html/xpanel${RANDOM_NUMBER}"
+
+if [ ! -d "$destination_dir" ]; then
+    mkdir "$destination_dir"
+    echo "Directory created: $destination_dir"
     echo "Folder created successfully!"
 else
     echo "Folder already exists."
 fi
-   
- destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
 
- cd /var/www/html/
- wget -O wizwizpanel.zip https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
+cd /var/www/html/
+wget -O "$destination_dir/wizwizpanel.zip" https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
 
- file_to_transfer="/var/www/html/wizwizpanel.zip"
- destination_dir=$(find /var/www/html -type d -name "*xpanel*" | head -n 1)
+file_to_transfer="$destination_dir/wizwizpanel.zip"
 
- if [ -z "$destination_dir" ]; then
-   echo "Error: Could not find directory containing 'xpanel' in '/var/www/html'"
-   exit 1
- fi
-
- mv "$file_to_transfer" "$destination_dir/" && yes | unzip "$destination_dir/wizwizpanel.zip" -d "$destination_dir/" && rm "$destination_dir/wizwizpanel.zip" && sudo chmod -R 755 "$destination_dir/" && sudo chown -R www-data:www-data "$destination_dir/" 
+mv "$file_to_transfer" "$destination_dir/" && yes | unzip "$destination_dir/wizwizpanel.zip" -d "$destination_dir/" && rm "$destination_dir/wizwizpanel.zip" && sudo chmod -R 755 "$destination_dir/" && sudo chown -R www-data:www-data "$destination_dir/"
 
 
 wait
