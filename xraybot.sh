@@ -108,7 +108,7 @@ echo -e "\n\033[33mXraybot config and script have been installed successfully\03
 wait
     
     
-destination_dir="/var/www/html/xpanel${RANDOM_NUMBER}"
+destination_dir="/var/www/html/xpanel"
 
 if [ ! -d "$destination_dir" ]; then
     mkdir "$destination_dir"
@@ -119,7 +119,7 @@ else
 fi
 
 cd /var/www/html/
-wget -O "$destination_dir/wizwizpanel.zip" https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
+wget -O wizwizpanel.zip" https://github.com/xrayoflight/xraybot/releases/download/v2raybot/wizwizpanel.zip
 
 file_to_transfer="$destination_dir/wizwizpanel.zip"
 
