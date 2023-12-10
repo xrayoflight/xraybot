@@ -903,6 +903,13 @@ function getGateWaysKeys(){
             ['text'=>" Tron",'callback_data'=>"wizwizch"]
         ],
         [
+            ['text'=>$youKassa,'callback_data'=>"changeGateWaysyouKassa"],
+            ['text'=>" Tron",'callback_data'=>"wizwizch"]
+        ],
+
+
+
+        [
             ['text'=>$walletState,'callback_data'=>"changeGateWayswalletState"],
             ['text'=>"Кошелек",'callback_data'=>"wizwizch"]
         ],

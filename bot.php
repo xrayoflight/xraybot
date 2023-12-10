@@ -495,6 +495,11 @@ if (preg_match('/^changePaymentKeys(\w+)/', $data, $match)) {
         case "tronwallet":
             $gate = "Адрес кошелька Tron";
             break;
+        case "youkassa":
+            $gate = "API ключ магазина";
+            break;
+
+
     }
     sendMessage("🔘| Пожалуйста, введите $gate", $cancelKey);
     setUser($data);
