@@ -829,6 +829,7 @@ function getGateWaysKeys(){
     $nowPaymentWallet = $botState['nowPaymentWallet']=="on"?$buttonValues['on']:$buttonValues['off'];
     $nowPaymentOther = $botState['nowPaymentOther']=="on"?$buttonValues['on']:$buttonValues['off'];
     $tronWallet = $botState['tronWallet']=="on"?$buttonValues['on']:$buttonValues['off'];
+    $youKassa = $botState['youKassa']=="on"?$buttonValues['on']:$buttonValues['off'];
     $zarinpal = $botState['zarinpal']=="on"?$buttonValues['on']:$buttonValues['off'];
     $nextpay = $botState['nextpay']=="on"?$buttonValues['on']:$buttonValues['off'];
     $rewaredChannel = $botState['rewardChannel']??" ";
@@ -866,6 +867,13 @@ function getGateWaysKeys(){
             ['text'=>(!empty($paymentKeys['tronwallet'])?$paymentKeys['tronwallet']:" "),'callback_data'=>"changePaymentKeystronwallet"],
             ['text'=>"Адрес кошелька Tron",'callback_data'=>"wizwizch"]
         ],
+        [
+            ['text'=>(!empty($paymentKeys['youkassa'])?$paymentKeys['youkassa']:" "),'callback_data'=>"changePaymentKeystyoukassa"],
+            ['text'=>"Secret API Key YouKassa",'callback_data'=>"wizwizch"]
+        ],
+
+
+
         [
             ['text'=>$weSwapState,'callback_data'=>"changeGateWaysweSwapState"],
             ['text'=>" WeSwap",'callback_data'=>"wizwizch"]

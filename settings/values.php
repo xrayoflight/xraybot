@@ -370,7 +370,8 @@ $mainValues = [
         'start_bot'=>"Запустить бота",
         'enable_config'=>"Включить конфигурацию",
         'disable_config'=>"Отключить конфигурацию",
-        "tron_gateway"=>" Tron",
+        "tron_gateway"=>"Tron",
+        "youkassa_gateway"=>"YouMoney", 
         'plan_discount'=>"На тариф",
         'server_discount'=>"На сервер"
     ];

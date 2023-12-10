@@ -865,6 +865,7 @@ if ($userInfo['step'] == "increaseMyWallet" && $text != $buttonValues['cancel'])
     if ($botState['nextpay'] == "on") $keyboard[] = [['text' => $buttonValues['nextpay_gateway'], 'url' => $botUrl . "pay/?nextpay&hash_id=" . $hash_id]];
     if ($botState['weSwapState'] == "on") $keyboard[] = [['text' => $buttonValues['weswap_gateway'], 'callback_data' => "payWithWeSwap" . $hash_id]];
     if ($botState['tronWallet'] == "on") $keyboard[] = [['text' => $buttonValues['tron_gateway'], 'callback_data' => "payWithTronWallet" . $hash_id]];
+    if ($botState['youKassa'] == "on") $keyboard[] = [['text' => $buttonValues['youkassa_gateway'], 'callback_data' => "payWithYouKassa" . $hash_id]];
 
     $keyboard[] = [['text' => $buttonValues['cancel'], 'callback_data' => "mainMenu"]];
 
@@ -2601,6 +2602,7 @@ if((preg_match('/^discountCustomPlanDay(\d+)/',$userInfo['step'], $match) || pre
     if($botState['weSwapState'] == "on") $keyboard[] = [['text' => $buttonValues['weswap_gateway'],  'callback_data' => "payWithWeSwap" . $hash_id]];
     if($botState['walletState'] == "on") $keyboard[] = [['text' => $buttonValues['pay_with_wallet'],  'callback_data' => "payCustomWithWallet$hash_id"]];
     if($botState['tronWallet'] == "on") $keyboard[] = [['text' => $buttonValues['tron_gateway'],  'callback_data' => "payWithTronWallet" . $hash_id]];
+    if ($botState['youKassa'] == "on") $keyboard[] = [['text' => $buttonValues['youkassa_gateway'], 'callback_data' => "payWithYouKassa" . $hash_id]];
 
     if(!preg_match('/^discountCustomPlanDay/', $userInfo['step'])) $keyboard[] = [['text' => "🎁 Неужели у вас есть промо-код?",  'callback_data' => "haveDiscountCustom_" . $rowId]];
 	$keyboard[] = [['text' => $buttonValues['cancel'], 'callback_data' => "mainMenu"]];
@@ -2827,6 +2829,7 @@ if((preg_match('/^discountSelectPlan(\d+)_(\d+)_(\d+)/',$userInfo['step'],$match
         if($botState['weSwapState'] == "on") $keyboard[] = [['text' => $buttonValues['weswap_gateway'],  'callback_data' => "payWithWeSwap" . $hash_id]];
         if($botState['walletState'] == "on") $keyboard[] = [['text' => $buttonValues['pay_with_wallet'],  'callback_data' => "payWithWallet$hash_id"]];
         if($botState['tronWallet'] == "on") $keyboard[] = [['text' => $buttonValues['tron_gateway'],  'callback_data' => "payWithTronWallet" . $hash_id]];
+        if ($botState['youKassa'] == "on") $keyboard[] = [['text' => $buttonValues['youkassa_gateway'], 'callback_data' => "payWithYouKassa" . $hash_id]];
         
         if(!preg_match('/^discountSelectPlan/', $userInfo['step'])) $keyboard[] = [['text' => " 🎁 Есть ли у вас промокод?",  'callback_data' => "haveDiscountSelectPlan_" . $match[1] . "_" . $match[2] . "_" . $rowId]];
 
@@ -6109,6 +6112,7 @@ if(preg_match('/sConfigRenewPlan(\d+)_(\d+)/',$data, $match) && ($botState['sell
     if($botState['weSwapState'] == "on") $keyboard[] = [['text' => $buttonValues['weswap_gateway'],  'callback_data' => "payWithWeSwap" . $hash_id]];
     if($botState['walletState'] == "on") $keyboard[] = [['text' => $buttonValues['pay_with_wallet'],  'callback_data' => "payWithWallet$hash_id"]];
     if($botState['tronWallet'] == "on") $keyboard[] = [['text' => $buttonValues['tron_gateway'],  'callback_data' => "payWithTronWallet" . $hash_id]];
+    if ($botState['youKassa'] == "on") $keyboard[] = [['text' => $buttonValues['youkassa_gateway'], 'callback_data' => "payWithYouKassa" . $hash_id]];
 
 	$keyboard[] = [['text' => $buttonValues['back_to_main'], 'callback_data' => "mainMenu"]];
     sendMessage(str_replace(['PLAN-NAME', 'PRICE', 'DESCRIPTION'], [$name, $price, $desc], $mainValues['buy_subscription_detail']), json_encode(['inline_keyboard'=>$keyboard]), "HTML");
@@ -7471,6 +7475,7 @@ if(preg_match('/^discountRenew(\d+)_(\d+)/',$userInfo['step'], $match) || preg_m
     if($botState['weSwapState'] == "on") $keyboard[] = [['text' => $buttonValues['weswap_gateway'],  'callback_data' => "payWithWeSwap" . $hash_id]];
     if($botState['walletState'] == "on") $keyboard[] = [['text' => "Оплатить с баланса: $price",  'callback_data' => "payRenewWithWallet$hash_id"]];
     if($botState['tronWallet'] == "on") $keyboard[] = [['text' => $buttonValues['tron_gateway'],  'callback_data' => "payWithTronWallet" . $hash_id]];
+    if ($botState['youKassa'] == "on") $keyboard[] = [['text' => $buttonValues['youkassa_gateway'], 'callback_data' => "payWithYouKassa" . $hash_id]];
 
     if(!preg_match('/^discountRenew/', $userInfo['step'])) $keyboard[] = [['text' => " 🎁 نکنه کد تخفیف داری؟ ",  'callback_data' => "haveDiscountRenew_" . $match[1] . "_" . $rowId]];
 
@@ -8287,6 +8292,7 @@ if(preg_match('/selectPlanDayIncrease(?<orderId>.+)_(?<dayId>.+)/',$data,$match)
     if($botState['weSwapState'] == "on") $keyboard[] = [['text' => $buttonValues['weswap_gateway'],  'callback_data' => "payWithWeSwap" . $hash_id]];
     if($botState['walletState'] == "on") $keyboard[] = [['text' => $buttonValues['pay_with_wallet'],  'callback_data' => "payIncraseDayWithWallet$hash_id"]];
     if($botState['tronWallet'] == "on") $keyboard[] = [['text' => $buttonValues['tron_gateway'],  'callback_data' => "payWithTronWallet" . $hash_id]];
+    if ($botState['youKassa'] == "on") $keyboard[] = [['text' => $buttonValues['youkassa_gateway'], 'callback_data' => "payWithYouKassa" . $hash_id]];
 
     $keyboard[] = [['text'=>$buttonValues['cancel'], 'callback_data'=> "mainMenu"]];
     editText($message_id, "Пожалуйста, завершите оплату одним из следующих способов:", json_encode(['inline_keyboard' => $keyboard]));
@@ -8627,6 +8633,7 @@ if(preg_match('/increaseVolumePlan(?<orderId>.+)_(?<volumeId>.+)/',$data,$match)
     if($botState['weSwapState'] == "on") $keyboard[] = [['text' => $buttonValues['weswap_gateway'],  'callback_data' => "payWithWeSwap" . $hash_id]];
     if($botState['walletState'] == "on") $keyboard[] = [['text' => "💰Оплатить с баланса  " . $planprice,  'callback_data' => "payIncreaseWithWallet$hash_id"]];
     if($botState['tronWallet'] == "on") $keyboard[] = [['text' => $buttonValues['tron_gateway'],  'callback_data' => "payWithTronWallet" . $hash_id]];
+    if ($botState['youKassa'] == "on") $keyboard[] = [['text' => $buttonValues['youkassa_gateway'], 'callback_data' => "payWithYouKassa" . $hash_id]];
 
     $keyboard[] = [['text'=>$buttonValues['cancel'], 'callback_data'=> "mainMenu"]];
     editText($message_id, "Пожалуйста, завершите свою оплату одним из следующих способов:", json_encode(['inline_keyboard' => $keyboard]));
